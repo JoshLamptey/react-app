@@ -2,6 +2,12 @@ import Die from './dice'
 import './App.css'
 
 function App() {
+
+   function allNewDice(){
+    let x = Math.floor((Math.random()*6)+1)
+    console.log(x)
+   }
+   allNewDice()
   return(
     <main>
         <div className="tenzies">
@@ -11,7 +17,7 @@ function App() {
           <Die value = "4"/>
           <Die value = "5"/>
            <Die value = "6"/>
-          <Die value = "7"/>
+          <Die value = "7"/> 
           <Die value = "8"/>
           <Die value = "9"/>
           <Die value = "10"/>
@@ -20,5 +26,5 @@ function App() {
     </main>
   )
 }
-
+                                                                                                                                                                                                                                                                                                                                                                       
 export default App
