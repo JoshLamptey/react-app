@@ -1,13 +1,16 @@
 import Die from './dice'
 import './App.css'
 
-function App() {
+function App() { 
 
    function allNewDice(){
-    let x = Math.floor((Math.random()*6)+1)
-    console.log(x)
+    const newDie = []
+    for (let i = 0; i < 10; i++) {
+     newDie.push(Math.ceil(Math.random()*6))
+    }
+    return newDie
    }
-   allNewDice()
+   console.log(allNewDice())
   return(
     <main>
         <div className="tenzies">
