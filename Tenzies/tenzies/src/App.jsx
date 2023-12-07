@@ -1,7 +1,9 @@
 import Die from './dice'
 import './App.css'
+import { useState } from 'react'
 
 function App() { 
+  const [dice,setDice] = useState(allNewDice())
 
    function allNewDice(){
     const newDie = []
@@ -10,22 +12,16 @@ function App() {
     }
     return newDie
    }
-   console.log(allNewDice())
+  function handleclick(){
+    setDice(allNewDice())
+  }
+    let diceElements = dice.map((num)=>{
+      return <Die value ={num}/>
+    })
   return(
     <main>
-        <div className="tenzies">
-          <Die value = "1"/>
-          <Die value = "2"/>
-          <Die value = "3"/>
-          <Die value = "4"/>
-          <Die value = "5"/>
-           <Die value = "6"/>
-          <Die value = "7"/> 
-          <Die value = "8"/>
-          <Die value = "9"/>
-          <Die value = "10"/>
-
-        </div>
+        <div className="tenzies">{diceElements}</div>
+        <div className="roll" onClick={handleclick}>Roll</div>
     </main>
   )
 }
