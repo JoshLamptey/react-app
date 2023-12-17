@@ -21,9 +21,14 @@ function App() {
    
   function handleclick(){
     setDice(allNewDice())
+
   }
     let diceElements = dice.map((num)=>{
-      return <Die value ={num.value} key ={num.id}/>
+      return <Die
+       value ={num.value} 
+       key ={num.id}
+       held = {num.isHeld}
+       />
     })
   return(
     <main>
