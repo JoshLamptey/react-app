@@ -18,7 +18,12 @@ function App() {
     return newDie
    }
 
-   
+    // function to hold a number
+    function holdDice(id){
+      console.log(id)
+     }
+
+   // Function to roll dice
   function handleclick(){
     setDice(allNewDice())
 
@@ -27,6 +32,7 @@ function App() {
       return <Die
        value ={num.value} 
        key ={num.id}
+       holdDice ={(()=>{ holdDice(num.id)})} 
        held = {num.isHeld}
        />
     })
