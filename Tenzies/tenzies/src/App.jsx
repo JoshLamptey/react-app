@@ -20,7 +20,10 @@ function App() {
 
     // function to hold a number
     function holdDice(id){
-      console.log(id)
+      setDice(oldDice=> oldDice.map(die=>{
+        return die.id === id? 
+        {...die,isHeld: !die.isHeld} :die
+      }))
      }
 
    // Function to roll dice
