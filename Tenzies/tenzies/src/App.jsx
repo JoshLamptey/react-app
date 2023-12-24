@@ -1,10 +1,15 @@
 import Die from './dice'
 import './App.css'
 import {nanoid} from "nanoid"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() { 
   const [dice,setDice] = useState(allNewDice())
+  const [tenzies,setTenzies] = useState(false)
+
+  useEffect(()=>{
+    console.log("dice state has changed")
+  },[dice])
 
   function generateNewDie(){
     return {
