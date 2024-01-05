@@ -62,6 +62,9 @@ function App() {
        held = {num.isHeld}
        />
     })
+    function refreshGame(){
+      window.location.reload()
+    }
   return(
     <main>
       {tenzies && <Confetti
@@ -75,7 +78,7 @@ function App() {
              Click each die to freeze it at its current value between rolls.
              </p>
         <div className="tenzies">{diceElements}</div>
-        <div className="roll" onClick={handleclick}> {tenzies ? "New Game" : "Roll"}</div>
+        <div className="roll" onClick={tenzies ? refreshGame : handleclick}> {tenzies ? "New Game" : "Roll"}</div>
     </main>
   )
 }
